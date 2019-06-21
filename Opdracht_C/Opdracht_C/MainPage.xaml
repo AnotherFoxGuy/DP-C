@@ -7,13 +7,8 @@
              x:Class="Opdracht_C.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label x:Name="Test"/>
-        <Switch x:Name="toggle1" Toggled="Switch_Toggled" VerticalOptions="Center" HorizontalOptions="Center"/>
-        <Label Text="eerste arduino" />
-        <Entry x:Name="Iptext" Placeholder="eerste arduino IP"/>
-        <Label Text="laaste arduino" />
-        <Entry x:Name="lastIp" Placeholder="laaste arduino IP"/>
+        <Button x:Name="IpScanner" Text="Scan" Clicked="IpScanner_Clicked"/>
+        <ListView x:Name="IPList" ItemTapped="IPList_ItemTapped"/>
     </StackLayout>
 
 </ContentPage>

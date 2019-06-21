@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Green;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -12,45 +13,25 @@ namespace Opdracht_C
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
-    {
-        Client client = new Client();
-        Client laasteAr = new Client();
+    {     
         public MainPage()
         {
-            InitializeComponent();
-            
-        }
-
-        private void Switch_Toggled(object sender, ToggledEventArgs e)
-        {
-            if (client.CheckValidIpAddress(Iptext.Text))
-            {
-                client.SetConnection(Iptext.Text, 8000);
-                if (e.Value)
-                {
-                    Test.Text = "True";
-                    Connecting("T");
-                }
-                else
-                {
-                    Test.Text = "flase";
-                    Connecting("F");
-                }
-            }
-            
-
+            InitializeComponent();        
         }
      
-        public void Connecting(string data)
+        private void IpScanner_Clicked(object sender, EventArgs e)
         {
-            
+            IPList.ItemsSource = new IPScanner().Getstrings();
+        }
+
+        private void IPList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var client = new Client();
+            client.SetConnection((string)e.Item, 8000);
             client.OpenConnection();
-            Test.Text = "test";
-            client.SendData(data);
+            client.SendData("F");
             client.CloseConnection();
         }
         
-
-
     }
 }
