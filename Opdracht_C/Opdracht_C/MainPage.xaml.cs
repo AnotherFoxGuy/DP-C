@@ -29,7 +29,7 @@ namespace Opdracht_C
             var client = new Client();
             client.SetConnection((string)e.Item, 8000);
             client.OpenConnection();
-            client.SendData("F");
+            client.SendData("T");
             client.CloseConnection();
         }
         
