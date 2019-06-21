@@ -33,7 +33,7 @@ void setup() {
     Serial.print("Server ip is: ");
     Serial.println(Ethernet.localIP());
 
-    NewRemoteReceiver::init(0, 2, showCode);
+    NewRemoteReceiver::init(0, 2, NRRCallback);
 
 }
 
@@ -93,7 +93,7 @@ void loop() {
 }
 
 // Callback function is called only when a valid code is received.
-void showCode(NewRemoteCode receivedCode) {
+void NRRCallback(NewRemoteCode receivedCode) {
     // Note: interrupts are disabled. You can re-enable them if needed.
 
     // Print the received code.
