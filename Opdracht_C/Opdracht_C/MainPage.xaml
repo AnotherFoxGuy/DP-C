@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Opdracht_C.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label x:Name="Test"/>
+        <Switch x:Name="toggle1" Toggled="Switch_Toggled" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Text="eerste arduino" />
+        <Entry x:Name="Iptext" Placeholder="eerste arduino IP"/>
+        <Label Text="laaste arduino" />
+        <Entry x:Name="lastIp" Placeholder="laaste arduino IP"/>
+
+        <Button Pressed="Button_Pressed"/>
+    </StackLayout>
+
+</ContentPage>
