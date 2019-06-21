@@ -33,7 +33,7 @@ void setup() {
     Serial.print("Server ip is: ");
     Serial.println(Ethernet.localIP());
 
-   NewRemoteReceiver::init(0, 2, showCode);
+    NewRemoteReceiver::init(0, 2, showCode);
 
 }
 
@@ -84,31 +84,32 @@ void loop() {
                 transmitter.sendUnit(2, true);
             }
             if (cm > 10) {
-                servo.write(0);         
+                servo.write(0);
             }
         }
 
         delay(2000);
     }
 }
+
 // Callback function is called only when a valid code is received.
 void showCode(NewRemoteCode receivedCode) {
-  // Note: interrupts are disabled. You can re-enable them if needed.
+    // Note: interrupts are disabled. You can re-enable them if needed.
 
-  // Print the received code.
-  Serial.print("Addr ");
-  Serial.print(receivedCode.address);
+    // Print the received code.
+    Serial.print("Addr ");
+    Serial.print(receivedCode.address);
 
-  switch (receivedCode.switchType) {
-    case NewRemoteCode::off:
-      Serial.print(" off");
-      servo.write(0);
-      break;
-    case NewRemoteCode::on:
-      Serial.print(" on");
-      servo.write(90);
-      break;
-  }
+    switch (receivedCode.switchType) {
+        case NewRemoteCode::off:
+            Serial.print(" off");
+            servo.write(0);
+            break;
+        case NewRemoteCode::on:
+            Serial.print(" on");
+            servo.write(90);
+            break;
+    }
 
 }
 
