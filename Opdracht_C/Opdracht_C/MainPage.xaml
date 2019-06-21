@@ -14,8 +14,6 @@
         <Entry x:Name="Iptext" Placeholder="eerste arduino IP"/>
         <Label Text="laaste arduino" />
         <Entry x:Name="lastIp" Placeholder="laaste arduino IP"/>
-
-        <Button Pressed="Button_Pressed"/>
     </StackLayout>
 
 </ContentPage>
