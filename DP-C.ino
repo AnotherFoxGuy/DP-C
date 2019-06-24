@@ -81,7 +81,7 @@ void loop() {
             if (cm < 10) {
                 servo.write(90);
                 // Switch unit 2 off
-                transmitter.sendUnit(2, true);
+                transmitter.sendUnit(2, false);
             }
             if (cm > 10) {
                 servo.write(0);
